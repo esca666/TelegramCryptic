@@ -1,42 +1,32 @@
-import pyfiglet
-from config import get_client
-import group_scraper
-import member_extractor
-import message_analyzer
-import leak_checker
-import monitor
+from group_finder import find_telegram_groups
 
-def display_banner():
-    banner = pyfiglet.figlet_format("Cryptic", font="slant")  # Hacker-themed font
-    print(banner)
-    print("[*] Welcome to Cryptic OSINT Tool")
-    print("[*] Created by Cryptic")
-    print("[*] For educational purposes only. Use responsibly.")
-    print("[*] Code by: Cryptic")
-    print("[*] Let's dive into the world of OSINT...")
+def main():
+    print("\n[*] Welcome to Cryptic OSINT Tool")
+    print("[*] Choose a module (1-5):\n")
+    print("1. Find Groups/Channels")
+    print("2. Extract Members")
+    print("3. Analyze Messages")
+    print("4. Check for Leaks")
+    print("5. Real-Time Monitoring")
 
-# Call display_banner() before the main menu
-display_banner()
+    choice = input("Enter choice: ")
 
-print("Telegram OSINT Tool")
-print("1. Find Groups/Channels")
-print("2. Extract Members")
-print("3. Analyze Messages")
-print("4. Check for Leaks")
-print("5. Real-Time Monitoring")
+    if choice == "1":
+        find_telegram_groups()
+    elif choice == "2":
+        # Your extract members function
+        pass
+    elif choice == "3":
+        # Your analyze messages function
+        pass
+    elif choice == "4":
+        # Your leak checker function
+        pass
+    elif choice == "5":
+        # Your real-time monitoring function
+        pass
+    else:
+        print("[*] Invalid choice. Exiting.")
 
-choice = input("Choose a module (1-5): ")
-client = get_client()
-
-if choice == "1":
-    group_scraper.run(client)
-elif choice == "2":
-    member_extractor.run(client)
-elif choice == "3":
-    message_analyzer.run(client)
-elif choice == "4":
-    leak_checker.run()
-elif choice == "5":
-    monitor.run(client)
-else:
-    print("Invalid choice.")
+if __name__ == "__main__":
+    main()
