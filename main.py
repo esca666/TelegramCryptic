@@ -13,8 +13,7 @@ def display_banner():
     print("[*] Created by Cryptic")
     print("[*] For educational purposes only. Use responsibly.")
     print("[*] Code by: Cryptic")
-    print("[*] Let's dive into the world of OSINT...
-")
+    print("[*] Let's dive into the world of OSINT...")
 
 # Call display_banner() before the main menu
 display_banner()
